@@ -60,6 +60,10 @@ namespace DemoOpenCvSharp
                 if(rect.Width > 10 && rect.Width < 80) //loc kich thuoc mong muon
                 {
                     OpenCvSharp.Cv2.Rectangle(imgDraw, rect, color, thickness);
+
+                    var centerX = rect.TopLeft.X + rect.Width / 2;
+                    var centerY = rect.TopLeft.Y + rect.Height / 2;
+                    OpenCvSharp.Cv2.Circle(imgDraw, new OpenCvSharp.Point(centerX, centerY), 5, color, -1);
                 }
             }
 
